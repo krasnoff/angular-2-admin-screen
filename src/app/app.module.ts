@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +11,7 @@ import { GlobalDataService } from './global-data.service';
 import { AuthenticatedGuard } from './authenticated.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login/blankpage', pathMatch: 'full' },
+  { path: '', redirectTo: '/blankpage', pathMatch: 'full' },
   { path: 'blankpage', component: BlankpageComponent, canActivate: [AuthenticatedGuard] },
   { path: 'login/:redirectTo', component: LoginPageComponent }
 ];
@@ -26,6 +26,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthenticatedGuard, GlobalDataService],
   bootstrap: [AppComponent]
