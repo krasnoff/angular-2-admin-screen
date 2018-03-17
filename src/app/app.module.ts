@@ -17,6 +17,9 @@ import { FormsComponent } from './forms/forms.component';
 import { PanelsAndWellsComponent } from './panels-and-wells/panels-and-wells.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { TypographyComponent } from './typography/typography.component';
+import { IconsComponent } from './icons/icons.component';
+import { GridComponent } from './grid/grid.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -29,6 +32,9 @@ const routes: Routes = [
   { path: 'panelsAndWells', component: PanelsAndWellsComponent, canActivate: [AuthenticatedGuard] },
   { path: 'buttons', component: ButtonsComponent, canActivate: [AuthenticatedGuard] },
   { path: 'notifications', component: NotificationsComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'typography', component: TypographyComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'icons', component: IconsComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'grid', component: GridComponent, canActivate: [AuthenticatedGuard] },
   
   { path: 'login/:redirectTo', component: LoginPageComponent }
 ];
@@ -46,7 +52,10 @@ const routes: Routes = [
     FormsComponent,
     PanelsAndWellsComponent,
     ButtonsComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    TypographyComponent,
+    IconsComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
