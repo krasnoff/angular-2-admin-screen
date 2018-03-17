@@ -9,10 +9,27 @@ import { BlankpageComponent } from './blankpage/blankpage.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { GlobalDataService } from './global-data.service';
 import { AuthenticatedGuard } from './authenticated.guard';
+import { DashBoardComponent } from './dash-board/dash-board.component';
+import { FlotChartsComponent } from './flot-charts/flot-charts.component';
+import { MorrisChartsComponent } from './morris-charts/morris-charts.component';
+import { TablesComponent } from './tables/tables.component';
+import { FormsComponent } from './forms/forms.component';
+import { PanelsAndWellsComponent } from './panels-and-wells/panels-and-wells.component';
+import { ButtonsComponent } from './buttons/buttons.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/blankpage', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'blankpage', component: BlankpageComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'dashboard', component: DashBoardComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'flotChart', component: FlotChartsComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'morrisChart', component: MorrisChartsComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'tables', component: TablesComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'forms', component: FormsComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'panelsAndWells', component: PanelsAndWellsComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'buttons', component: ButtonsComponent, canActivate: [AuthenticatedGuard] },
+  { path: 'notifications', component: NotificationsComponent, canActivate: [AuthenticatedGuard] },
+  
   { path: 'login/:redirectTo', component: LoginPageComponent }
 ];
 
@@ -21,7 +38,15 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     BlankpageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    DashBoardComponent,
+    FlotChartsComponent,
+    MorrisChartsComponent,
+    TablesComponent,
+    FormsComponent,
+    PanelsAndWellsComponent,
+    ButtonsComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
