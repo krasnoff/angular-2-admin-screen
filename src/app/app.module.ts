@@ -21,6 +21,8 @@ import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { GridComponent } from './grid/grid.component';
 
+import { ChartsModule } from 'ng2-charts';
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'blankpage', component: BlankpageComponent, canActivate: [AuthenticatedGuard] },
@@ -61,7 +63,8 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [AuthenticatedGuard, GlobalDataService],
   bootstrap: [AppComponent]

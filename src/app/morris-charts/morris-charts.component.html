@@ -14,7 +14,16 @@
               </div>
               <!-- /.panel-heading -->
               <div class="panel-body">
-                  <div id="morris-area-chart"></div>
+                <canvas baseChart width="200" height="200"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                </canvas>
               </div>
               <!-- /.panel-body -->
           </div>
