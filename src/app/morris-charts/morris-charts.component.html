@@ -14,16 +14,18 @@
               </div>
               <!-- /.panel-heading -->
               <div class="panel-body">
-                <canvas baseChart width="200" height="200"
-                    [datasets]="lineChartData"
-                    [labels]="lineChartLabels"
-                    [options]="lineChartOptions"
-                    [colors]="lineChartColors"
-                    [legend]="lineChartLegend"
-                    [chartType]="lineChartType"
-                    (chartHover)="chartHovered($event)"
-                    (chartClick)="chartClicked($event)">
-                </canvas>
+                <div id="morris-bar-chart" style="width: 600px;height: 600px;">
+                    <canvas baseChart 
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
               </div>
               <!-- /.panel-body -->
           </div>
@@ -37,7 +39,16 @@
               </div>
               <!-- /.panel-heading -->
               <div class="panel-body">
-                  <div id="morris-bar-chart"></div>
+                  <div id="morris-bar-chart" style="width: 600px;height: 600px;">
+                    <canvas baseChart 
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                  </div>
               </div>
               <!-- /.panel-body -->
           </div>
